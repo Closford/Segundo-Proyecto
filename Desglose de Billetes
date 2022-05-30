@@ -1,0 +1,41 @@
+b1 = int(0)
+b2 = int(0)
+b3 = int(0)
+b4 = int(0)
+b5 = int(0)
+b6 = int(0)
+
+dinero = int(input("Ingresar la cantidad ($) que desea retirar: "))
+
+if dinero >= 100:
+     b1 = int(dinero / 100)
+     dinero = dinero % 100
+
+if dinero >= 50:
+     b2 = int(dinero / 50)
+     dinero = dinero % 50
+
+if dinero >= 20:
+     b3 = int(dinero / 20)
+     dinero = dinero % 20
+
+if dinero >= 10:
+     b4 = int(dinero / 10)
+     dinero = dinero % 10
+
+if dinero >= 5:
+     b5 = int(dinero / 5)
+     dinero = dinero % 5
+
+if dinero >= 1:
+     b6 = int(dinero / 1)
+     dinero = dinero % 1
+
+
+print("Se le entregará el dinero ($) en: ")
+print("Billetes de 100$  "+str(b1))
+print("Billetes de 50$ = "+str(b2))
+print("Billetes de 20$ = "+str(b3)) 
+print("Billetes de 10$ = "+str(b4))
+print("Billetes de 5$ = "+str(b5))
+print("Billetes de 1$ = "+str(b6))
