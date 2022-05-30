@@ -1,0 +1,51 @@
+//El programa determina la media, mediana y desviación estándar de los numeros indicados (Programa en C++)
+using namespace std;
+
+int main()
+{
+    short int i,j,n;
+    
+    cout<<"Introduzca la cantidad de números a ingresar: ";
+    cin>>n;
+
+    float A[n];
+    float suma=0,media,mediana,desviacion=0,aux;
+
+    for (i=0; i<n; i++)
+    {
+        cout<<"A["<<i<<"]: ";
+        cin>>A[i];
+        suma+=A[i];
+    }
+
+    media=suma/n; //media aritmetica
+    //Ordenamiento del arreglo
+    for (j=0; j<n; j++)
+        for (i=0; i<n-1; i++)
+            if (A[i]>A[i+1])
+            {
+                aux=A[i];
+                A[i]=A[i+1];
+                A[i+1]=aux;
+            }
+
+    if ((n%2)==1) //n es impar
+        mediana=A[n/2];
+    else
+        mediana=(A[n/2]+A[n/2-1])/2;
+
+    cout<<"Media: "<<media<<endl;
+    cout<<"Mediana: "<<mediana<<endl;
+    
+    //Calculo de la desviación estandar
+    aux=0;
+    for (i=0;i<n;i++)
+        aux=aux+pow(A[i]-media,2);
+    aux=(aux/n);
+    desviacion=sqrt(aux);
+    
+    cout<<"Desviación estandar: "<<desviacion<<endl;
+
+
+    return 0;
+}
